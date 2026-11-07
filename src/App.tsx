@@ -25,7 +25,7 @@ export default function App() {
   }, []);
   
   // Direct APK download link
-  const directDownloadUrl = '/downloads/Marketify_v5.2104.apk';
+  const directDownloadUrl = 'https://files.catbox.moe/rdpr75.apk';
   const [showDownloadToast, setShowDownloadToast] = useState<boolean>(false);
 
   const t = translations[lang] || translations.en;
@@ -38,16 +38,7 @@ export default function App() {
   }[lang] || 'English';
 
   const handleDownloadClick = () => {
-    // 1. Direct download execution
-    const link = document.createElement('a');
-    link.href = directDownloadUrl;
-    link.download = 'Marketify_v5.2104.apk';
-    link.setAttribute('target', '_blank');
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
-
-    // 2. Trigger instant feedback toast
+    // Trigger instant feedback toast
     setShowDownloadToast(true);
     setTimeout(() => {
       setShowDownloadToast(false);
@@ -120,7 +111,9 @@ export default function App() {
             <div className="mt-3 mb-4 sm:mt-3.5 sm:mb-4.5 w-full flex flex-col items-center px-1">
               <a
                 href={directDownloadUrl}
-                download="Marketify_v5.2104.apk"
+                target="_blank"
+                rel="noopener noreferrer"
+                download="Marketify.apk"
                 onClick={handleDownloadClick}
                 className="w-full max-w-[340px] sm:max-w-[360px] py-3.5 px-6 rounded-full bg-gradient-to-r from-[#ff3838] via-[#ff2626] to-[#eb1b23] text-white font-black text-[15px] sm:text-[16px] tracking-wider uppercase shadow-[0_10px_24px_-4px_rgba(255,40,40,0.5)] hover:brightness-105 active:scale-[0.985] transition-all duration-150 cursor-pointer flex items-center justify-center gap-2 text-center"
               >
