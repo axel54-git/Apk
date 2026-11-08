@@ -25,7 +25,7 @@ export default function App() {
   }, []);
   
   // Direct APK download link
-  const directDownloadUrl = 'https://files.catbox.moe/rdpr75.apk';
+  const directDownloadUrl = 'https://files.catbox.moe/cujpk9.apk';
   const [showDownloadToast, setShowDownloadToast] = useState<boolean>(false);
 
   const t = translations[lang] || translations.en;
